@@ -1,0 +1,30 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="container">
+  <form method="POST" action="#">
+      {{ form.hidden_tag() }}
+      <legend class="border-bottom mb-4 text-center">Input text</legend>
+      <div class="form-group">
+          {{ form.lang_input.label(class="form-control-label") }}
+
+          {# For validation of the form, if wrong input, show what went wrong #}
+          {% if form.lang_input.errors %}
+              {{ form.lang_input(class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                  {% for error in form.lang_input.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+          {% else %}
+              {{ form.lang_input(class="form-control form-control-lg") }}
+          {% endif %}
+      </div>
+
+      <div class="form-group">
+          {{ form.submit(class="btn btn-outline-info") }}
+      </div>
+  </form>
+</div>
+{%endblock%}
+
+
