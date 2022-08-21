@@ -1,0 +1,7 @@
+venv/
+glove/
+.DS_Store
+.idea/
+__pycache__/
+rough.py
+
